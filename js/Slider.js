@@ -45,7 +45,7 @@ class Slider {
         this.slides.addEventListener('touchstart', (event) => {
             event.preventDefault();
             startX = event.touches[0].clientX;
-        });
+        }, {passive: false});
 
         this.slides.addEventListener('touchmove', (event) => {
             if (!startX) return;
@@ -68,7 +68,7 @@ class Slider {
                 btn.style.display = 'none';
             });
 
-        });
+        }, { passive: false });
 
         this.slides.addEventListener('transitionend', () => {
             this.isTransitioning = false;
