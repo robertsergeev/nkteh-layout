@@ -688,6 +688,7 @@ details p {
     overflow: hidden;
     aspect-ratio: 16/9;
     object-fit: cover;
+    touch-action: none;
 }
 
 .slides {

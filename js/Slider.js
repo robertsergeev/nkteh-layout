@@ -8,7 +8,7 @@ class Slider {
             this.isTransitioning = false;
             this.btns = btns;
 
-            if(this.totalSlides > 0) {
+            if(this.totalSlides > 1) {
                 this.totalSlides += 2;
                 this.init();
             }
@@ -44,6 +44,8 @@ class Slider {
         let startX;
         this.slides.addEventListener('touchstart', (event) => {
             event.preventDefault();
+            event.stopPropagation();
+
             startX = event.touches[0].clientX;
         }, {passive: false});
 
@@ -54,6 +56,8 @@ class Slider {
 
             if(Math.abs(diffX) > 20) {
                 event.preventDefault();
+                event.stopPropagation();
+                
                 if (diffX > 0) {
                     this.showNextSlide();
                 } else {
