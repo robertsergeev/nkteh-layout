@@ -4,11 +4,11 @@ class Slider {
             this.slides = slides;
             this.slide = slide;
             this.totalSlides = this.slide.length;
-            this.currentIndex = 1; 
+            this.currentIndex = 1;
             this.isTransitioning = false;
             this.btns = btns;
 
-            if(this.totalSlides > 1) {
+            if (this.totalSlides > 1) {
                 this.totalSlides += 2;
                 this.init();
             }
@@ -16,17 +16,17 @@ class Slider {
     }
 
     init() {
-        // добавляю последний слайд в начало, а первый в конец 
-        let slidesArr = [...this.slide];
+        // добавляю последний слайд в начало, а последний в конец 
+        this.slidesArr = [...this.slide];
 
         this.slides.insertAdjacentHTML(
             'afterbegin',
-            `<div class="slide">${slidesArr[this.totalSlides - 3].innerHTML}</div>`
+            `<div class="slide">${this.slidesArr[this.totalSlides - 3].innerHTML}</div>`
         );
 
         this.slides.insertAdjacentHTML(
             'beforeend',
-            `<div class="slide">${slidesArr[0].innerHTML}</div>`
+            `<div class="slide">${this.slidesArr[0].innerHTML}</div>`
         );
 
         // двигаю на 100%, что бы показывался первый слайд и без анимации
@@ -41,38 +41,8 @@ class Slider {
         document.querySelector('#next').addEventListener('click', () => this.showNextSlide());
         document.querySelector('#prev').addEventListener('click', () => this.showPrevSlide());
 
-        let startX;
-        this.slides.addEventListener('touchstart', (event) => {
-            event.preventDefault();
-            event.stopPropagation();
-
-            startX = event.touches[0].clientX;
-        }, {passive: false});
-
-        this.slides.addEventListener('touchmove', (event) => {
-            if (!startX) return;
-            const endX = event.touches[0].clientX;
-            const diffX = startX - endX;
-
-            if(Math.abs(diffX) > 20) {
-                event.preventDefault();
-                event.stopPropagation();
-                
-                if (diffX > 0) {
-                    this.showNextSlide();
-                } else {
-                    this.showPrevSlide();
-                }
-
-                startX = null;
-            }
-
-            // если работает тач скрин - прячу кнопки
-            this.btns.forEach(btn => {
-                btn.style.display = 'none';
-            });
-
-        }, { passive: false });
+        document.querySelector('.slides').addEventListener("touchstart", this.handleStart.bind(this), false);
+        document.querySelector('.slides').addEventListener("touchend", this.handleEnd.bind(this), false);
 
         this.slides.addEventListener('transitionend', () => {
             this.isTransitioning = false;
@@ -91,9 +61,24 @@ class Slider {
         setInterval(this.showNextSlide.bind(this), 5000);
     }
 
+    handleStart(e) {
+        this.touchobj = e.changedTouches[0];
+        this.startX = this.touchobj.pageX;
+    }
+
+    handleEnd(e) {
+        this.touchobj = e.changedTouches[0];
+        this.endX = this.touchobj.pageX;
+        if (this.endX > this.startX) {
+            this.showPrevSlide();
+        } else {
+            this.showNextSlide();
+        }
+    }
+
     updateSlidePosition() {
-        const offset = -this.currentIndex * 100;
-        this.slides.style.transform = `translateX(${offset}%)`;
+        this.offset = -this.currentIndex * 100;
+        this.slides.style.transform = `translateX(${this.offset}%)`;
     }
 
     showSlide(index) {
