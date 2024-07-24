@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NK tehnologija</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/RequestSender.js" defer></script>
+    <script src="js/Popup.js" defer></script>
+    <script src="js/Slider.js" defer></script>
+    <script src="js/burger.js" defer></script>
+    <script src="js/animateNumbers.js" defer></script>
+    <script src="js/SwipeProducts.js" defer></script>
+</head>
+
+<body>
+    <svg display="none" aria-hidden="true">
+        <symbol id="icon-telegram" viewBox="0 0 32 32">
+            <path
+                d="M31.5 0.482c0.375 0.268 0.554 0.696 0.482 1.143l-4.571 27.429c-0.054 0.339-0.268 0.625-0.571 0.804-0.161 0.089-0.357 0.143-0.554 0.143-0.143 0-0.286-0.036-0.429-0.089l-8.089-3.304-4.321 5.268c-0.214 0.268-0.536 0.411-0.875 0.411-0.125 0-0.268-0.018-0.393-0.071-0.446-0.161-0.75-0.589-0.75-1.071v-6.232l15.429-18.911-19.089 16.518-7.054-2.893c-0.411-0.161-0.679-0.536-0.714-0.982-0.018-0.429 0.196-0.839 0.571-1.054l29.714-17.143c0.179-0.107 0.375-0.161 0.571-0.161 0.232 0 0.464 0.071 0.643 0.196z">
+            </path>
+        </symbol>
+        <symbol id="icon-vk" viewBox="0 0 35 32">
+            <path
+                d="M34.232 9.571c0.268 0.732-0.571 2.446-2.679 5.25-3.464 4.607-3.839 4.179-0.982 6.839 2.75 2.554 3.321 3.786 3.411 3.946 0 0 1.143 2-1.268 2.018l-4.571 0.071c-0.982 0.196-2.286-0.696-2.286-0.696-1.714-1.179-3.321-4.232-4.571-3.839 0 0-1.286 0.411-1.25 3.161 0.018 0.589-0.268 0.911-0.268 0.911s-0.321 0.339-0.946 0.393h-2.054c-4.518 0.286-8.5-3.875-8.5-3.875s-4.357-4.5-8.179-13.482c-0.25-0.589 0.018-0.875 0.018-0.875s0.268-0.339 1.018-0.339l4.893-0.036c0.464 0.071 0.786 0.321 0.786 0.321s0.286 0.196 0.429 0.571c0.804 2 1.839 3.821 1.839 3.821 1.786 3.679 3 4.304 3.696 3.929 0 0 0.911-0.554 0.714-5-0.071-1.607-0.518-2.339-0.518-2.339-0.411-0.554-1.179-0.714-1.518-0.768-0.268-0.036 0.179-0.679 0.768-0.964 0.875-0.429 2.429-0.446 4.268-0.429 1.446 0.018 1.857 0.107 2.411 0.232 1.696 0.411 1.125 1.982 1.125 5.768 0 1.214-0.232 2.911 0.643 3.464 0.375 0.25 1.304 0.036 3.589-3.857 0 0 1.071-1.857 1.911-4.018 0.143-0.393 0.446-0.554 0.446-0.554s0.286-0.161 0.679-0.107l5.143-0.036c1.554-0.196 1.804 0.518 1.804 0.518z">
+            </path>
+        </symbol>
+        <symbol id="icon-office" viewBox="0 0 32 32">
+            <path
+                d="M0 32h16v-32h-16v32zM10 4h4v4h-4v-4zM10 12h4v4h-4v-4zM10 20h4v4h-4v-4zM2 4h4v4h-4v-4zM2 12h4v4h-4v-4zM2 20h4v4h-4v-4zM18 10h14v2h-14zM18 32h4v-8h6v8h4v-18h-14z">
+            </path>
+        </symbol>
+        <symbol id="icon-whatsapp" viewBox="0 0 27 32">
+            <path
+                d="M17.589 17.679c0.304 0 3.214 1.518 3.339 1.732 0.036 0.089 0.036 0.196 0.036 0.268 0 0.446-0.143 0.946-0.304 1.357-0.411 1-2.071 1.643-3.089 1.643-0.857 0-2.625-0.75-3.393-1.107-2.554-1.161-4.143-3.143-5.679-5.411-0.679-1-1.286-2.232-1.268-3.464v-0.143c0.036-1.179 0.464-2.018 1.321-2.821 0.268-0.25 0.554-0.393 0.929-0.393 0.214 0 0.429 0.054 0.661 0.054 0.482 0 0.571 0.143 0.75 0.607 0.125 0.304 1.036 2.732 1.036 2.911 0 0.679-1.232 1.446-1.232 1.857 0 0.089 0.036 0.179 0.089 0.268 0.393 0.839 1.143 1.804 1.821 2.446 0.821 0.786 1.696 1.304 2.696 1.804 0.125 0.071 0.25 0.125 0.393 0.125 0.536 0 1.429-1.732 1.893-1.732zM13.964 27.143c6.179 0 11.214-5.036 11.214-11.214s-5.036-11.214-11.214-11.214-11.214 5.036-11.214 11.214c0 2.357 0.75 4.661 2.143 6.571l-1.411 4.161 4.321-1.375c1.821 1.196 3.982 1.857 6.161 1.857zM13.964 2.464c7.429 0 13.464 6.036 13.464 13.464s-6.036 13.464-13.464 13.464c-2.268 0-4.518-0.571-6.518-1.679l-7.446 2.393 2.429-7.232c-1.268-2.089-1.929-4.5-1.929-6.946 0-7.429 6.036-13.464 13.464-13.464z">
+            </path>
+        </symbol>
+        <symbol id="icon-home" viewBox="0 0 32 32">
+            <path d="M32 19l-6-6v-9h-4v5l-6-6-16 16v1h4v10h10v-6h4v6h10v-10h4z"></path>
+        </symbol>
+        <symbol id="icon-library" viewBox="0 0 34 32">
+            <path
+                d="M32 30v-2h-2v-12h2v-2h-6v2h2v12h-6v-12h2v-2h-6v2h2v12h-6v-12h2v-2h-6v2h2v12h-6v-12h2v-2h-6v2h2v12h-2v2h-2v2h34v-2h-2zM16 0h2l16 10v2h-34v-2l16-10z">
+            </path>
+        </symbol>
+        <symbol id="icon-refresh" viewBox="0 0 27 32">
+            <path
+                d="M26.982 19.143c0 0.036 0 0.089-0.018 0.125-1.518 6.321-6.732 10.732-13.321 10.732-3.482 0-6.857-1.375-9.393-3.786l-2.304 2.304c-0.214 0.214-0.5 0.339-0.804 0.339-0.625 0-1.143-0.518-1.143-1.143v-8c0-0.625 0.518-1.143 1.143-1.143h8c0.625 0 1.143 0.518 1.143 1.143 0 0.304-0.125 0.589-0.339 0.804l-2.446 2.446c1.679 1.571 3.911 2.464 6.214 2.464 3.179 0 6.125-1.643 7.786-4.357 0.429-0.696 0.643-1.375 0.946-2.089 0.089-0.25 0.268-0.411 0.536-0.411h3.429c0.321 0 0.571 0.268 0.571 0.571zM27.429 4.857v8c0 0.625-0.518 1.143-1.143 1.143h-8c-0.625 0-1.143-0.518-1.143-1.143 0-0.304 0.125-0.589 0.339-0.804l2.464-2.464c-1.696-1.571-3.929-2.446-6.232-2.446-3.179 0-6.125 1.643-7.786 4.357-0.429 0.696-0.643 1.375-0.946 2.089-0.089 0.25-0.268 0.411-0.536 0.411h-3.554c-0.321 0-0.571-0.268-0.571-0.571v-0.125c1.536-6.339 6.804-10.732 13.393-10.732 3.5 0 6.911 1.393 9.446 3.786l2.321-2.304c0.214-0.214 0.5-0.339 0.804-0.339 0.625 0 1.143 0.518 1.143 1.143z">
+            </path>
+        </symbol>
+        <symbol id="icon-close" viewBox="0 0 25 32">
+            <path
+                d="M23.179 23.893c0 0.446-0.179 0.893-0.5 1.214l-2.429 2.429c-0.321 0.321-0.768 0.5-1.214 0.5s-0.893-0.179-1.214-0.5l-5.25-5.25-5.25 5.25c-0.321 0.321-0.768 0.5-1.214 0.5s-0.893-0.179-1.214-0.5l-2.429-2.429c-0.321-0.321-0.5-0.768-0.5-1.214s0.179-0.893 0.5-1.214l5.25-5.25-5.25-5.25c-0.321-0.321-0.5-0.768-0.5-1.214s0.179-0.893 0.5-1.214l2.429-2.429c0.321-0.321 0.768-0.5 1.214-0.5s0.893 0.179 1.214 0.5l5.25 5.25 5.25-5.25c0.321-0.321 0.768-0.5 1.214-0.5s0.893 0.179 1.214 0.5l2.429 2.429c0.321 0.321 0.5 0.768 0.5 1.214s-0.179 0.893-0.5 1.214l-5.25 5.25 5.25 5.25c0.321 0.321 0.5 0.768 0.5 1.214z">
+            </path>
+        </symbol>
+        <symbol id="icon-chevron-left" viewBox="0 0 24 32">
+            <path
+                d="M20.911 5.661l-9.482 9.482 9.482 9.482c0.446 0.446 0.446 1.161 0 1.607l-2.964 2.964c-0.446 0.446-1.161 0.446-1.607 0l-13.25-13.25c-0.446-0.446-0.446-1.161 0-1.607l13.25-13.25c0.446-0.446 1.161-0.446 1.607 0l2.964 2.964c0.446 0.446 0.446 1.161 0 1.607z">
+            </path>
+        </symbol>
+        <symbol id="icon-chevron-right" viewBox="0 0 22 32">
+            <path
+                d="M19.768 15.946l-13.25 13.25c-0.446 0.446-1.161 0.446-1.607 0l-2.964-2.964c-0.446-0.446-0.446-1.161 0-1.607l9.482-9.482-9.482-9.482c-0.446-0.446-0.446-1.161 0-1.607l2.964-2.964c0.446-0.446 1.161-0.446 1.607 0l13.25 13.25c0.446 0.446 0.446 1.161 0 1.607z">
+            </path>
+        </symbol>
+        <symbol id="icon-chevron-up" viewBox="0 0 32 32">
+            <path
+                d="M30.054 24.054l-2.964 2.946c-0.446 0.446-1.161 0.446-1.607 0l-9.482-9.482-9.482 9.482c-0.446 0.446-1.161 0.446-1.607 0l-2.964-2.946c-0.446-0.446-0.446-1.179 0-1.625l13.25-13.232c0.446-0.446 1.161-0.446 1.607 0l13.25 13.232c0.446 0.446 0.446 1.179 0 1.625z">
+            </path>
+        </symbol>
+        <symbol id="icon-phone" viewBox="0 0 25 32">
+            <path
+                d="M25.143 22.429c0 0.643-0.286 1.893-0.554 2.482-0.375 0.875-1.375 1.446-2.179 1.893-1.054 0.571-2.125 0.911-3.321 0.911-1.661 0-3.161-0.679-4.679-1.232-1.089-0.393-2.143-0.875-3.125-1.482-3.036-1.875-6.696-5.536-8.571-8.571-0.607-0.982-1.089-2.036-1.482-3.125-0.554-1.518-1.232-3.018-1.232-4.679 0-1.196 0.339-2.268 0.911-3.321 0.446-0.804 1.018-1.804 1.893-2.179 0.589-0.268 1.839-0.554 2.482-0.554 0.125 0 0.25 0 0.375 0.054 0.375 0.125 0.768 1 0.946 1.357 0.571 1.018 1.125 2.054 1.714 3.054 0.286 0.464 0.821 1.036 0.821 1.589 0 1.089-3.232 2.679-3.232 3.643 0 0.482 0.446 1.107 0.696 1.536 1.804 3.25 4.054 5.5 7.304 7.304 0.429 0.25 1.054 0.696 1.536 0.696 0.964 0 2.554-3.232 3.643-3.232 0.554 0 1.125 0.536 1.589 0.821 1 0.589 2.036 1.143 3.054 1.714 0.357 0.179 1.232 0.571 1.357 0.946 0.054 0.125 0.054 0.25 0.054 0.375z">
+            </path>
+        </symbol>
+        <symbol id="icon-envelope" viewBox="0 0 32 32">
+            <path
+                d="M32 12.964v14.179c0 1.571-1.286 2.857-2.857 2.857h-26.286c-1.571 0-2.857-1.286-2.857-2.857v-14.179c0.536 0.589 1.143 1.107 1.804 1.554 2.964 2.018 5.964 4.036 8.875 6.161 1.5 1.107 3.357 2.464 5.304 2.464h0.036c1.946 0 3.804-1.357 5.304-2.464 2.911-2.107 5.911-4.143 8.893-6.161 0.643-0.446 1.25-0.964 1.786-1.554zM32 7.714c0 2-1.482 3.804-3.054 4.893-2.786 1.929-5.589 3.857-8.357 5.804-1.161 0.804-3.125 2.446-4.571 2.446h-0.036c-1.446 0-3.411-1.643-4.571-2.446-2.768-1.946-5.571-3.875-8.339-5.804-1.268-0.857-3.071-2.875-3.071-4.5 0-1.75 0.946-3.25 2.857-3.25h26.286c1.554 0 2.857 1.286 2.857 2.857z">
+            </path>
+        </symbol>
+        <symbol id="icon-map-marker" viewBox="0 0 18 32">
+            <path
+                d="M13.714 11.714c0-2.518-2.054-4.571-4.571-4.571s-4.571 2.054-4.571 4.571 2.054 4.571 4.571 4.571 4.571-2.054 4.571-4.571zM18.286 11.714c0 1.089-0.125 2.214-0.589 3.196l-6.5 13.821c-0.375 0.786-1.196 1.268-2.054 1.268s-1.679-0.482-2.036-1.268l-6.518-13.821c-0.464-0.982-0.589-2.107-0.589-3.196 0-5.054 4.089-9.143 9.143-9.143s9.143 4.089 9.143 9.143z">
+            </path>
+        </symbol>
+        <symbol id="icon-address-book" viewBox="0 0 32 32">
+            <path
+                d="M6 0v32h24v-32h-24zM18 8.010c2.203 0 3.99 1.786 3.99 3.99s-1.786 3.99-3.99 3.99-3.99-1.786-3.99-3.99 1.786-3.99 3.99-3.99v0zM24 24h-12v-2c0-2.209 1.791-4 4-4v0h4c2.209 0 4 1.791 4 4v2zM2 2h3v6h-3v-6zM2 10h3v6h-3v-6zM2 18h3v6h-3v-6zM2 26h3v6h-3v-6z">
+            </path>
+        </symbol>
+        <symbol id="icon-mobile" viewBox="0 0 32 32">
+            <path
+                d="M23 0h-14c-1.65 0-3 1.35-3 3v26c0 1.65 1.35 3 3 3h14c1.65 0 3-1.35 3-3v-26c0-1.65-1.35-3-3-3zM12 1.5h8v1h-8v-1zM16 30c-1.105 0-2-0.895-2-2s0.895-2 2-2 2 0.895 2 2-0.895 2-2 2zM24 24h-16v-20h16v20z">
+            </path>
+        </symbol>
+        <symbol id="icon-rutube" viewBox="0 0 32 32">
+            <path
+                d="M16 0c-8.837 0-16 7.163-16 16s7.163 16 16 16 16-7.163 16-16-7.163-16-16-16zM16 29c-7.18 0-13-5.82-13-13s5.82-13 13-13 13 5.82 13 13-5.82 13-13 13zM12 9l12 7-12 7z">
+            </path>
+        </symbol>
+    </svg>
+
+    <div class="top-header">
+        <div class="container">
+            <ul class="contacts">
+                <li>
+                    <a aria-label="email" href="#">
+                        <svg class="icon">
+                            <use xlink:href="#icon-envelope"></use>
+                        </svg>
+                        hkt-group.ru
+                    </a>
+                </li>
+                <li>
+                    <a aria-label="phone" href="#">
+                        <svg class="icon">
+                            <use xlink:href="#icon-phone"></use>
+                        </svg>
+                        +7 (812) 9522999
+                    </a>
+                </li>
+            </ul>
+            <ul class="language-picker">
+                <li><a aria-label="Language RU" href="#" class="active">ru</a></li>
+                <li><a aria-label="Language ENG" href="#">en</a></li>
+            </ul>
+            <ul class="social-links">
+                <li>
+                    <a aria-label="vk" href="#">
+                        <svg class="icon">
+                            <use xlink:href="#icon-vk"></use>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a aria-label="telegram" href="#">
+                        <svg class="icon">
+                            <use xlink:href="#icon-telegram"></use>
+                        </svg>
+                    </a>
+                </li>
+                <li>
+                    <a aria-label="rutube" href="#">
+                        <svg class="icon">
+                            <use xlink:href="#icon-rutube"></use>
+                        </svg>
+
+                    </a>
+                </li>
+                <li>
+                    <a aria-label="whatsapp" href="#">
+                        <svg class="icon">
+                            <use xlink:href="#icon-whatsapp"></use>
+                        </svg>
+
+                    </a>
+                </li>
+                <li>
+                    <a aria-label="yandex map" href="#">
+                        <svg class="icon">
+                            <use xlink:href="#icon-map-marker"></use>
+                        </svg>
+
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="container">
+            <a aria-label="logo" href="index.html" class="logo">
+                NK TEH
+            </a>
+            <nav class="menu">
+                <ul>
+                    <li><a aria-label="About US" href="index.html" class="active">О нас</a></li>
+                    <li><a aria-label="Products" href="products.html" class="">Продукция</a></li>
+                    <li><a aria-label="Service" href="#" class="">Сервис</a></li>
+                    <li><a aria-label="Contacts" href="contacts.html" class="">Контакты</a></li>
+                    <!-- <li><a aria-label="vacancies" href="vacancies.html" class="">Вакансии</a></li> -->
+                    <li><a aria-label="Ask question" href="#" id="request-btn">Задать вопрос</a></li>
+                </ul>
+            </nav>
+            <button aria-label="menu" class="burger">
+                <span></span>
+            </button>
+        </div>
+    </header>
+    
+    <main class="main">
+        <div class="slider">
+            <button id="prev">
+                <svg class="icon">
+                    <use xlink:href="#icon-chevron-left"></use>
+                </svg>
+            </button>
+            <div class="slides">
+                <div class="slide"><img src="assets/slides/1.jpg" alt="Image 1"></div>
+                <div class="slide"><img src="assets/slides/2.jpg" alt="Image 2"></div>
+                <div class="slide"><img src="assets/slides/3.jpg" alt="Image 3"></div>
+                <div class="slide"><img src="assets/slides/4.jpg" alt="Image 4"></div>
+                <div class="slide"><img src="assets/slides/5.jpg" alt="Image 5"></div>
+                <div class="slide"><img src="assets/slides/6.jpg" alt="Image 6"></div>
+                <div class="slide"><img src="assets/slides/7.jpg" alt="Image 7"></div>
+            </div>
+            <button id="next">
+                <svg class="icon">
+                    <use xlink:href="#icon-chevron-right"></use>
+                </svg>
+            </button>
+        </div>
+
+        <section class="products-list">
+            <div class="container">
+                <ul id="products-list">
+                    <li>
+                        <a aria-label="product" href="product.html">
+                            <div class="products-img">
+                                <img src="assets/products/capot-bez-luka.webp" alt="">
+                            </div>
+                            <h2>Капот</h2>
+                        </a>
+                    </li>
+                        
+                    <li>
+                        <a aria-label="product" href="product.html">
+                            <div class="products-img">
+                                <img src="assets/products/ehlevator-26800-perspective-view.webp" alt="">
+                            </div>
+                            <h2>Элеватор</h2>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a aria-label="product" href="product.html">
+                            <div class="products-img">
+                                <img src="assets/products/metatel-lentochnyj.webp" alt="">
+                            </div>
+                            <h2>Метатель ленточный</h2>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a aria-label="product" href="product.html">
+                            <div class="products-img">
+                                <img src="assets/products/pereklyuchatel-potoka.webp" alt="">
+                            </div>
+                            <h2>Переключатель потока</h2>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a aria-label="product" href="product.html">
+                            <div class="products-img">
+                                <img src="assets/products/rukav-pryamotok-2-perspective-view-720DPI.webp" alt="">
+                            </div>
+                            <h2>Рукав прямоток</h2>
+                        </a>
+                    </li>
+                        
+                    <li>
+                        <a aria-label="product" href="product.html">
+                            <div class="products-img">
+                                <img src="assets/products/spreader-perspective-view-720DPI.webp" alt="">
+                            </div>
+                            <h2>разбрасыватель</h2>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a aria-label="product" href="product.html">
+                            <div class="products-img">
+                                <img src="assets/products/sudopogruzochnaya-mashina-SL-2000-Flat-View-720DPI.webp" alt="">
+                            </div>
+                            <h2>Судопогрузочная машина</h2>
+                        </a>
+                    </li>
+                        
+                    <li>
+                        <a aria-label="product" href="product.html">
+                            <div class="products-img">
+                                <img src="assets/products/ustanovka-aspiracionnaya.webp" alt="">
+                            </div>
+                            <h2>аспирационная установка</h2>
+                        </a>
+                    </li>
+                        
+                    <li>
+                        <a aria-label="product" href="product.html">
+                            <div class="products-img">
+                                <img src="assets/products/zadvizhka-shibernaya.webp" alt="">
+                            </div>
+                            <h2>шиберная задвижка</h2>
+                        </a>
+                    </li>
+                        
+
+                </ul>
+            </div>
+            <button aria-label="Swipe left" id="swipe-left">
+                <svg class="icon">
+                    <use xlink:href="#icon-chevron-left"></use>
+                </svg>
+            </button>
+            <button aria-label="Swipe right" id="swipe-right">
+                <svg class="icon">
+                    <use xlink:href="#icon-chevron-right"></use>
+                </svg>
+            </button>
+        </section>
+
+        <section class="better-service">
+            <div class="container">
+                <div class="img">
+                    <img src="assets/photo1720704624.jpeg" alt="">
+                </div>
+                <div class="text">
+                    <h4>Distinctively</h4>
+                    <h1>Better service</h1>
+                    <h3>Feugiat ornade dignissim quis</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque, temporibus cum! Neque, quibusdam. Veniam cupiditate hic tempora perspiciatis ipsa debitis fuga quisquam labore possimus, sed, ducimus, nesciunt inventore aliquid quod? <a aria-label="read more" href="">Read more...</a></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="achievements">
+            <div class="container">
+                <ul>
+                    <li>
+                        <div data-targetNum="5" class="num">0</div>
+                        <div class="text">Lorem ipsum dolor sit amet.</div>
+                    </li>
+                    <li>
+                        <div data-targetNum="15" class="num">0</div>
+                        <div class="text">Lorem ipsum dolor sit amet.</div>
+                    </li>
+                    <li>
+                        <div data-targetNum="2" class="num">0</div>
+                        <div class="text">Lorem ipsum dolor sit amet.</div>
+                    </li>
+                    <li>
+                        <div data-targetNum="25" class="num">0</div>
+                        <div class="text">Lorem ipsum dolor sit amet.</div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="video-section">
+            <div class="container">
+                <div class="video-header">
+                    <h2>Working With Excellence</h2>
+                    <h3>Welcome to construction</h3>
+                </div>
+                <div class="video-body">
+                    <div class="video-text">
+                        <ul class="custom-list">
+                            <li> Lorem ipsum dolor sit amet consectetur adipisicing elit. </li>
+                            <li> Lorem ipsum dolor sit amet consectetur adipisicing elit. </li>
+                            <li> Lorem ipsum dolor sit amet consectetur adipisicing elit. </li>
+                            <li> Lorem ipsum dolor sit amet consectetur, adipisicing elit.</li>
+                        </ul>
+                        <button aria-label="read more" class="video-btn">Read more</button>
+                    </div>
+                    <div class="video">
+                        <img src="assets/slides/1.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section class="certificates">
+        <div class="container">
+            <ul>
+                <li>
+                    <a aria-label="certificate" href="assets/certificates/pdf/Сертификат_Система_менеджмента_безопасности_труда_и_охраны_здоровья.pdf" target="_blank">
+                        <img src="assets/certificates/images/ros_test_standart.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a aria-label="certificate" href="assets/certificates/pdf/Сертификат_Система_менеджмента_качества.pdf" target="_blank">
+                        <img src="assets/certificates/images/ros_test_standart.png" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a aria-label="certificate" href="assets/certificates/pdf/Сертификат_Система_экологического_менеджмента.pdf" target="_blank">
+                        <img src="assets/certificates/images/ros_test_standart.png" alt="">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <div id="map">
+        <div class="map">
+            <a href="https://yandex.ru/maps/2/saint-petersburg/?utm_medium=mapframe&utm_source=maps" class="map-link top-link">Санкт‑Петербург</a>
+            <a href="https://yandex.ru/maps/2/saint-petersburg/house/ulitsa_stepana_razina_8a/Z0kYdAFnTUUDQFtjfXVwcXpnZQ==/?ll=30.267846%2C59.910736&utm_medium=mapframe&utm_source=maps&z=17.75" class="map-link bottom-link">Улица Степана Разина, 8А на карте Санкт‑Петербурга, ближайшее метро Нарвская — Яндекс Карты</a>
+            <iframe src="https://yandex.ru/map-widget/v1/-/CCUZbSvFxB" width="100%" height="380" frameborder="1" allowfullscreen="true" class="map-iframe"></iframe>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-about">
+                <div class="logo">nk teh</div>
+                <div class="about">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique, animi! Voluptas nulla ipsum, deleniti nam esse expedita consequuntur repudiandae maiores enim, tempora, sunt dicta provident!
+                </div>
+                <ul class="social-links">
+                    <li>
+                        <a aria-label="vk" href="#">
+                            <svg class="icon">
+                                <use xlink:href="#icon-vk"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a aria-label="telegram" href="#">
+                            <svg class="icon">
+                                <use xlink:href="#icon-telegram"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a aria-label="rutube" href="#">
+                            <svg class="icon">
+                                <use xlink:href="#icon-rutube"></use>
+                            </svg>
+    
+                        </a>
+                    </li>
+                    <li>
+                        <a aria-label="whatsapp" href="#">
+                            <svg class="icon">
+                                <use xlink:href="#icon-whatsapp"></use>
+                            </svg>
+    
+                        </a>
+                    </li>
+                    <li>
+                        <a aria-label="yandex map" href="#">
+                            <svg class="icon">
+                                <use xlink:href="#icon-map-marker"></use>
+                            </svg>
+    
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-columns">
+                <div class="footer-column">
+                    <h3>Ссылки</h3>
+                    <ul>
+                        <li><a aria-label="about us" href="index.html" class="">О нас</a></li>
+                        <li><a aria-label="products" href="products.html" class="">Продукция</a></li>
+                        <li><a aria-label="service" href="#" class="">Сервис</a></li>
+                        <li><a aria-label="contacts" href="contacts.html" class="">Контакты</a></li>
+                        <li><a aria-label="vacancies" href="vacancies.html" class="">Вакансии</a></li>
+                    </ul>    
+                </div>
+                <div class="footer-column">
+                    <h3>Продукция</h3>
+                    <ul>
+                        <li ><a aria-label="product" href="#">Products 1</a></li>
+                        <li ><a aria-label="product" href="#">Products 2</a></li>
+                        <li ><a aria-label="product" href="#">Products 3</a></li>
+                        <li ><a aria-label="product" href="#">Products 4</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Контакты</h3>
+                    <ul>
+                        <li ><a aria-label="contact" href="#">Contact 1</a></li>
+                        <li ><a aria-label="contact" href="#">Contact 2</a></li>
+                        <li ><a aria-label="contact" href="#">Contact 3</a></li>
+                        <li ><a aria-label="contact" href="#">Contact 4</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="footer-copyright">&copy; 2024 copyright | NK Teh.</div>
+    
+    <div class="popup-overlay">
+        <form action="./api/post/quote.php" method="post" id="popup_form">
+            <button type="reset" aria-label="Close" class="close">x</button>
+            <h3>Get Quote</h3>
+            <fieldset>
+                <legend>Request A Quote</legend>
+                <input type="text" name="name" placeholder="Enter Name" value="" required>
+                <input type="email" name="email" placeholder="Enter Email" value="" required>
+                <input type="text" name="subject" placeholder="Enter Subject" required>
+                <textarea name="message" placeholder="Enter your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </fieldset>
+        </form>
+    </div>
+
+</body>
+
+</html>
