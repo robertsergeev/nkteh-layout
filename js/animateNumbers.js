@@ -29,6 +29,7 @@ function onScroll() {
     const counters = document.querySelectorAll('.num');
     counters.forEach(counter => {
         if (isElementInView(counter) && !counter.classList.contains('started')) {
+            counter.closest('li').insertAdjacentHTML('afterbegin', `<div class="bg-digit">${counter.dataset.targetnum}</div>`);
             counter.classList.add('started');
             const target = +counter.dataset.targetnum;
             animateCounter(counter, target);

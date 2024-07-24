@@ -1,4 +1,14 @@
+/**
+ * Класс работы с REST API
+ */
 class RequestSender {
+    /**
+     * 
+     * @param {string} method 'POST' | 'GET' | 'PUT' | 'DEL'
+     * @param {string} url линк на API
+     * @param {object} data object с данными, отправляется методом 'POST'
+     * 
+     */
     constructor(method, url, data = null) {
         return new Promise((resolve, reject) => {
             this.xhr = new XMLHttpRequest();

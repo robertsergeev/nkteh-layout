@@ -4,13 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NK tehnologija</title>
+    <title>ООО НКТ Наклонный спредер</title>
 
     <link rel="stylesheet" href="css/style.css">
 
+    <script src="js/UserDevice.js" defer></script>
     <script src="js/RequestSender.js" defer></script>
-    <script src="js/burger.js" defer></script>
     <script src="js/Popup.js" defer></script>
+    <script src="js/Slider.js" defer></script>
+    <script src="js/burger.js" defer></script>
+    <script src="js/animateNumbers.js" defer></script>
+    <script src="js/SwipeProducts.js" defer></script>
+    <script src="js/rutubePlayer.js" defer></script>
+    <script src="js/Accordion.js" defer></script>
 </head>
 
 <body>
@@ -104,15 +110,15 @@
         <div class="container">
             <ul class="contacts">
                 <li>
-                    <a href="#">
+                    <a aria-label="email" href="mailto:info@hkt-group.ru">
                         <svg class="icon">
                             <use xlink:href="#icon-envelope"></use>
                         </svg>
-                        hkt-group.ru
+                        info@hkt-group.ru
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a aria-label="phone" href="tel:+78129522999">
                         <svg class="icon">
                             <use xlink:href="#icon-phone"></use>
                         </svg>
@@ -120,27 +126,24 @@
                     </a>
                 </li>
             </ul>
-            <ul class="language-picker">
-                <li><a href="#" class="active">ru</a></li>
-                <li><a href="#">en</a></li>
-            </ul>
+
             <ul class="social-links">
                 <li>
-                    <a aria-label="vk" href="#">
+                    <a aria-label="vk" href="https://vk.com/nktehnologia">
                         <svg class="icon">
                             <use xlink:href="#icon-vk"></use>
                         </svg>
                     </a>
                 </li>
                 <li>
-                    <a aria-label="telegram" href="#">
+                    <a aria-label="telegram" href="https://t.me/NKTehgroup">
                         <svg class="icon">
                             <use xlink:href="#icon-telegram"></use>
                         </svg>
                     </a>
                 </li>
                 <li>
-                    <a aria-label="rutube" href="#">
+                    <a aria-label="rutube" href="https://rutube.ru/channel/26670018/videos/">
                         <svg class="icon">
                             <use xlink:href="#icon-rutube"></use>
                         </svg>
@@ -148,7 +151,7 @@
                     </a>
                 </li>
                 <li>
-                    <a aria-label="whatsapp" href="#">
+                    <a aria-label="whatsapp" href="https://wa.me/+79215680411">
                         <svg class="icon">
                             <use xlink:href="#icon-whatsapp"></use>
                         </svg>
@@ -156,7 +159,7 @@
                     </a>
                 </li>
                 <li>
-                    <a aria-label="yandex map" href="#">
+                    <a aria-label="Адрес" href="https://yandex.ru/maps/-/CCUZbOuNHA">
                         <svg class="icon">
                             <use xlink:href="#icon-map-marker"></use>
                         </svg>
@@ -166,50 +169,32 @@
             </ul>
         </div>
     </div>
-    
+
     <header class="header">
         <div class="container">
             <a aria-label="logo" href="index.html" class="logo">
-                NK TEH
+                ООО НКТ
             </a>
             <nav class="menu">
                 <ul>
-                    <li>
-                        <a aria-label="About US" href="index.html" class="">
-                            О нас
-                        </a>
-                    </li>
-                    <li>
-                        <a aria-label="Products" href="products.html" class="">
-                            Продукция
-                        </a>
-                    </li>
-                    <li>
-                        <a aria-label="Service" href="#" class="">
-                            Сервис
-                        </a>
-                    </li>
-                    <li>
-                        <a aria-label="Contacts" href="contacts.html" class="active">
-                            Контакты
-                        </a>
-                    </li>
-                    <li>
-                        <a aria-label="Ask question" href="#" id="request-btn">Задать вопрос</a>
-                    </li>
+                    <li><a aria-label="About US" href="index.html">О нас</a></li>
+                    <li><a aria-label="Products" href="products.html">Продукция</a></li>
+                    <li><a aria-label="Service" href="#">Сервис</a></li>
+                    <li><a aria-label="Contacts" href="contacts.html" class="active">Контакты</a></li>
+                    <!-- <li><a aria-label="vacancies" href="vacancies.html">Вакансии</a></li> -->
+                    <li><a aria-label="Ask question" href="#" id="request-btn">Задать вопрос</a></li>
                 </ul>
             </nav>
-            <button aria-label="menu" class="burger">
+            <button type="button" aria-label="Меню" class="burger">
                 <span></span>
             </button>
         </div>
     </header>
-    
+
     <main class="main">
         <section class="contacts-section">
             <div class="container">
-                <h2>Contacts and details</h2>
-                <hr>
+                <h2>Контакты и реквизиты</h2>
                 <div class="contacts-row">
                     <div class="contact">
                         <div class="heading">
@@ -226,7 +211,7 @@
                                 <li>
                                     <svg class="contacts-icons">
                                         <use xlink:href="#icon-map-marker"></use>
-                                    </svg> 
+                                    </svg>
                                     <span>19085, Russia, Saint Petersburg, Stepana Razina street 8A</span>
                                 </li>
                             </ul>
@@ -262,13 +247,13 @@
                                 <li>
                                     <svg class="contacts-icons">
                                         <use xlink:href="#icon-mobile"></use>
-                                    </svg> 
+                                    </svg>
                                     <span>+7 (812) 9522999</span>
                                 </li>
                                 <li>
                                     <svg class="contacts-icons">
                                         <use xlink:href="#icon-envelope"></use>
-                                    </svg> 
+                                    </svg>
                                     <span>info@nkteh-group.ru</span>
                                 </li>
                             </ul>
@@ -284,18 +269,39 @@
         <div class="container">
             <ul>
                 <li>
-                    <a href="assets/certificates/pdf/Сертификат_Система_менеджмента_безопасности_труда_и_охраны_здоровья.pdf" target="_blank">
-                        <img src="assets/certificates/images/ros_test_standart.png" alt="">
+                    <a aria-label="Сертификат Система экологического менеджмента"
+                        href="assets/certificates/pdf/sertifikat-sistema-ehkologicheskogo-menedzhmenta.pdf"
+                        target="_blank">
+                        <img src="assets/certificates/images/sertifikat-sistema-ehkologicheskogo-menedzhmenta.jpg"
+                            alt="">
                     </a>
                 </li>
                 <li>
-                    <a href="assets/certificates/pdf/Сертификат_Система_менеджмента_качества.pdf" target="_blank">
-                        <img src="assets/certificates/images/ros_test_standart.png" alt="">
+                    <a aria-label="Свидетельство Ленинградской областной торгово-промышленной палаты"
+                        href="assets/certificates/pdf/svidetelstvo-lo-tpp.pdf" target="_blank">
+                        <img src="assets/certificates/images/svidetelstvo-lo-tpp.jpg" alt="">
                     </a>
                 </li>
                 <li>
-                    <a href="assets/certificates/pdf/Сертификат_Система_экологического_менеджмента.pdf" target="_blank">
-                        <img src="assets/certificates/images/ros_test_standart.png" alt="">
+                    <a aria-label="Сертификат Система менеджмента безопасности труда и охраны здоровья."
+                        href="assets/certificates/pdf/sertifikat-sistema-menedzhmenta-bezopasnosti-truda-i-ohrany-zdorovya.pdf"
+                        target="_blank">
+                        <img src="assets/certificates/images/sertifikat-sistema-menedzhmenta-bezopasnosti-truda-i-ohrany-zdorovya.jpg"
+                            alt="">
+                    </a>
+                </li>
+                <li>
+                    <a aria-label="Свидетельство Ассоциации Региональное сотрудничество по проведению ремонтно-монтажных работ в области промышленной безопасности"
+                        href="assets/certificates/pdf/svidetelstvo-sro-v-oblasti-promyshlennoj-bezopasnosti.pdf"
+                        target="_blank">
+                        <img src="assets/certificates/images/svidetelstvo-sro-v-oblasti-promyshlennoj-bezopasnosti.jpg"
+                            alt="">
+                    </a>
+                </li>
+                <li>
+                    <a aria-label="Сертификат Система менеджмента качества."
+                        href="assets/certificates/pdf/sertifikat-sistema-menedzhmenta-kachestva.pdf" target="_blank">
+                        <img src="assets/certificates/images/sertifikat-sistema-menedzhmenta-kachestva.jpg" alt="">
                     </a>
                 </li>
             </ul>
@@ -304,109 +310,145 @@
 
     <div id="map">
         <div class="map">
-            <a href="https://yandex.ru/maps/2/saint-petersburg/?utm_medium=mapframe&utm_source=maps" class="map-link top-link">Санкт‑Петербург</a>
-            <a href="https://yandex.ru/maps/2/saint-petersburg/house/ulitsa_stepana_razina_8a/Z0kYdAFnTUUDQFtjfXVwcXpnZQ==/?ll=30.267846%2C59.910736&utm_medium=mapframe&utm_source=maps&z=17.75" class="map-link bottom-link">Улица Степана Разина, 8А на карте Санкт‑Петербурга, ближайшее метро Нарвская — Яндекс Карты</a>
-            <iframe src="https://yandex.ru/map-widget/v1/-/CCUZbSvFxB" width="100%" height="380" frameborder="1" allowfullscreen="true" class="map-iframe"></iframe>
+            <a href="https://yandex.ru/maps/2/saint-petersburg/?utm_medium=mapframe&utm_source=maps"
+                class="map-link top-link">Санкт‑Петербург</a>
+            <a href="https://yandex.ru/maps/2/saint-petersburg/house/ulitsa_stepana_razina_8a/Z0kYdAFnTUUDQFtjfXVwcXpnZQ==/?ll=30.267846%2C59.910736&utm_medium=mapframe&utm_source=maps&z=17.75"
+                class="map-link bottom-link">Улица Степана Разина, 8А на карте Санкт‑Петербурга, ближайшее метро
+                Нарвская — Яндекс Карты</a>
+            <iframe title="Яндекс Карты" src="https://yandex.ru/map-widget/v1/-/CCUZbSvFxB" width="100%" height="380"
+                frameborder="1" allowfullscreen="true" class="map-iframe"></iframe>
         </div>
     </div>
 
     <footer class="footer">
         <div class="container">
-            <div class="footer-about">
-                <div class="logo">nk teh</div>
+            <section>
+                <a aria-label="logo" href="index.html" class="logo">
+                    ООО НКТ
+                </a>
                 <div class="about">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique, animi! Voluptas nulla ipsum, deleniti nam esse expedita consequuntur repudiandae maiores enim, tempora, sunt dicta provident!
+                    ООО «НКТ» – эксперт на рынке перегрузочной техники, включая мостовые и портальные краны,
+                    судопогрузочные машины, спредеры, наклонные спредеры, питатели, ричстакеры.
                 </div>
                 <ul class="social-links">
                     <li>
-                        <a aria-label="vk" href="#">
+                        <a aria-label="vk" href="https://vk.com/nktehnologia">
                             <svg class="icon">
                                 <use xlink:href="#icon-vk"></use>
                             </svg>
                         </a>
                     </li>
                     <li>
-                        <a aria-label="telegram" href="#">
+                        <a aria-label="telegram" href="https://t.me/NKTehgroup">
                             <svg class="icon">
                                 <use xlink:href="#icon-telegram"></use>
                             </svg>
                         </a>
                     </li>
                     <li>
-                        <a aria-label="rutube" href="#">
+                        <a aria-label="rutube" href="https://rutube.ru/channel/26670018/videos/">
                             <svg class="icon">
                                 <use xlink:href="#icon-rutube"></use>
                             </svg>
-    
+
                         </a>
                     </li>
                     <li>
-                        <a aria-label="whatsapp" href="#">
+                        <a aria-label="whatsapp" href="https://wa.me/+79215680411">
                             <svg class="icon">
                                 <use xlink:href="#icon-whatsapp"></use>
                             </svg>
-    
+
                         </a>
                     </li>
                     <li>
-                        <a aria-label="yandex map" href="#">
+                        <a aria-label="Адрес" href="https://yandex.ru/maps/-/CCUZbOuNHA">
                             <svg class="icon">
                                 <use xlink:href="#icon-map-marker"></use>
                             </svg>
-    
+
                         </a>
                     </li>
                 </ul>
-            </div>
-            <div class="footer-columns">
-                <div class="footer-column">
-                    <h3>Ссылки</h3>
-                    <ul>
-                        <li><a aria-label="about us" href="index.html" class="">О нас</a></li>
-                        <li><a aria-label="products" href="products.html" class="">Продукция</a></li>
-                        <li><a aria-label="service" href="#" class="">Сервис</a></li>
-                        <li><a aria-label="contacts" href="contacts.html" class="">Контакты</a></li>
-                        <li><a aria-label="vacancies" href="vacancies.html" class="">Вакансии</a></li>
-                    </ul>    
-                </div>
-                <div class="footer-column">
-                    <h3>Продукция</h3>
-                    <ul>
-                        <li ><a aria-label="product" href="#">Products 1</a></li>
-                        <li ><a aria-label="product" href="#">Products 2</a></li>
-                        <li ><a aria-label="product" href="#">Products 3</a></li>
-                        <li ><a aria-label="product" href="#">Products 4</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h3>Контакты</h3>
-                    <ul>
-                        <li ><a aria-label="contact" href="#">Contact 1</a></li>
-                        <li ><a aria-label="contact" href="#">Contact 2</a></li>
-                        <li ><a aria-label="contact" href="#">Contact 3</a></li>
-                        <li ><a aria-label="contact" href="#">Contact 4</a></li>
-                    </ul>
-                </div>
-            </div>
+            </section>
+
+            <section>
+                <h3>Продукция</h3>
+                <ul class="products">
+                    <li><a aria-label="product" href="product.html">Капот без люка</a></li>
+                    <li><a aria-label="product" href="product.html">Капот с люком</a></li>
+                    <li><a aria-label="product" href="product.html">Элеватор 26800</a></li>
+                    <li><a aria-label="product" href="product.html">Метатель ленточный</a></li>
+                    <li><a aria-label="product" href="product.html">Переключатель потока</a></li>
+                    <li><a aria-label="product" href="product.html">Рукав прямоток</a></li>
+                    <li><a aria-label="product" href="product.html">Опрокидыватель наклонный</a></li>
+                    <li><a aria-label="product" href="product.html">Судопогрузочная машина</a></li>
+                    <li><a aria-label="product" href="product.html">Аспирационная установка</a></li>
+                    <li><a aria-label="product" href="product.html">Шиберная задвижка</a></li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Ссылки</h3>
+                <ul class="menu">
+                    <li><a aria-label="about us" href="index.html">О нас</a></li>
+                    <li><a aria-label="products" href="products.html">Продукция</a></li>
+                    <li><a aria-label="service" href="#">Сервис</a></li>
+                    <li><a aria-label="contacts" href="contacts.html" class="active">Контакты</a></li>
+                    <li><a aria-label="vacancies" href="vacancies.html">Вакансии</a></li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>Контакты</h3>
+                <ul class="contacts">
+                    <li>
+                        <a aria-label="email" href="mailto:info@hkt-group.ru">
+                            <svg class="icon">
+                                <use xlink:href="#icon-envelope"></use>
+                            </svg>
+                            info@hkt-group.ru
+                        </a>
+                    </li>
+                    <li>
+                        <a aria-label="Телефон" href="tel:+78129522999">
+                            <svg class="icon">
+                                <use xlink:href="#icon-phone"></use>
+                            </svg>
+                            +7 (812) 9522999
+                        </a>
+                    </li>
+                    <li>
+                        <a aria-label="Адрес" href="https://yandex.ru/maps/-/CCUZbOuNHA">
+                            <svg class="icon">
+                                <use xlink:href="#icon-map-marker"></use>
+                            </svg>
+                            улица Степана Разина, 8А, Санкт-Петербург, 198035
+                        </a>
+                    </li>
+                </ul>
+            </section>
+
         </div>
     </footer>
 
-    <div class="footer-copyright">&copy; 2024 copyright | NK Teh.</div>
-    
+    <div class="copyright">&copy; 2024 copyright | NK Teh.</div>
+
     <div class="popup-overlay">
-        <form action="./api/post/quote.php" method="post" id="popup_form">
+        <form action="./api/post/quote.php" method="post" id="popup_form" class="modal">
             <button type="reset" aria-label="Close" class="close">x</button>
-            <h3>Get Quote</h3>
+            <h3>Форма запроса</h3>
             <fieldset>
-                <legend>Request A Quote</legend>
-                <input type="text" name="name" placeholder="Enter Name" value="" required>
-                <input type="email" name="email" placeholder="Enter Email" value="" required>
-                <input type="text" name="subject" placeholder="Enter Subject" required>
-                <textarea name="message" placeholder="Enter your Message" required></textarea>
-                <button type="submit">Send Message</button>
+                <legend>Получить предложение</legend>
+                <input type="text" name="name" placeholder="Введите имя" value="" required>
+                <input type="email" name="email" placeholder="Введите Email" value="" required>
+                <input type="text" name="subject" placeholder="Озаглавьте сообщение" required>
+                <textarea name="message" placeholder="Текст сообщения" required></textarea>
+                <button type="submit">Отправить сообщение</button>
             </fieldset>
         </form>
     </div>
+
 </body>
 
 </html>
